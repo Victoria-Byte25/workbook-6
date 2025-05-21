@@ -2,27 +2,27 @@ package com.pluralsight.collection;
 
 import java.time.LocalDate;
 
-public class MainApp {
+public class Main {
     public static void main(String[] args) {
 
         FixedList<Integer> numbers = new FixedList<>(3);
-        numbers.add(10);
+        numbers.add(25);
         numbers.add(3);
-        numbers.add(92);
-        numbers.add(43);
+        numbers.add(13);
+        numbers.add(56);
 
-        System.out.println("Numbers size: " + numbers.getCurrentSize()); // 3
+        System.out.println("Numbers size: " + numbers.getCurrentSize());
 
         FixedList<LocalDate> dates = new FixedList<>(2);
         dates.add(LocalDate.now());
         dates.add(LocalDate.now());
-        dates.add(LocalDate.of(2024, 1, 1)); // should fail
+        dates.add(LocalDate.of(2025, 4, 14));
 
-        System.out.println("Dates size: " + dates.getCurrentSize()); // 2
+        System.out.println("Dates size: " + dates.getCurrentSize());
 
         FixedList<String> names = new FixedList<>(2);
-        names.add("Naade");
-        names.add("Victoria");
-        names.add("Babalola");
+        names.add("Julie");
+        names.add("Ezra");
+        names.add("David");
     }
 }
