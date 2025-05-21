@@ -13,13 +13,13 @@ public class FixedList<T> {
     }
 
     public boolean add(T item) {
-        if (items.size() < maxSize) {
-            items.add(item);
-            return true;
-        } else {
-            System.out.println(" List is full. Cannot add: " + item);
+        if (items.size() >= maxSize) {
+            System.out.println(" Can't add \"" + item + "\". List is full (" + maxSize + " items max).");
             return false;
         }
+
+        items.add(item);
+        return true;
     }
 
     public List<T> getItems() {
