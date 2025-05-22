@@ -26,7 +26,10 @@ public class Program {
         List<Person> matches = people.stream()
                 .filter(p -> p.getFirstName().toLowerCase().contains(input)
                         || p.getLastName().toLowerCase().contains(input))
+                .sorted(Comparator.comparing(Person::getLastName)
+                        .thenComparing(Person::getFirstName))
                 .collect(Collectors.toList());
+
 
         System.out.println("\nMatching People:");
         matches.forEach(System.out::println);
